@@ -36,6 +36,7 @@ main img {
   width: 100%;
 }
 
+
 /* ---  Groups & Items --- */
 
 .group {
@@ -58,11 +59,12 @@ header {
   background-color: #ff385c;
   padding: 20px 20px 0 20px;
   text-align: center;
+  
 }
 
 .logo {
   font-family: "Pangolin", cursive;
-  font-size: 72px;
+  font-size: 48px;
   color: #fff;
 }
 
@@ -79,7 +81,11 @@ header nav ul li {
 header nav ul li a {
   color: #fff;
   text-decoration: none;
-  padding: 0 20px 0 0;
+  padding: 0 10px 0 0;
+}
+#host-link{
+  padding: 0px;
+  margin: 0px;
 }
 
 header nav ul li a:hover {
@@ -90,7 +96,7 @@ header nav ul li a:hover {
 /* -------  Search Form ------- */
 form {
   border: 2px solid #ff385c;
-  padding: 10px;
+  padding: 16px;
   
 }
 
@@ -100,21 +106,16 @@ form div{
 }
 
 
-
 form label {
   font-weight: bold;
   text-align: right;
 }
-form input{
-  text-align: left;
-}
+
 
 form select,
 form input {
   margin-bottom: 20px;
   width: 180px;
-  align-self: center;
-  justify-self: center
   
 }
 
@@ -142,50 +143,83 @@ footer p {
 /* -------  Media Query ------- */
 
 @media all and (min-width: 480px) {
+  /*body{
+    padding: 0px 50px;
+  }
+ */
+
   header{
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
+    padding: 5px;
   }
+ nav{
+  transform: translateX(-25px);
+
+ }
+  #menu li{
+    padding: 5px;
+  }
+  
+  #host-link{
+    padding: 0px;
+    margin: 0px;
+  }
+  .logo {
+    font-size: 48px;
+    margin-bottom: 20px;
+  }
+  
   form{
     display: flex;
     justify-content: space-between;
-  }
-  form div {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    }
     
-  }
+    form div {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      min-width: 0;
+      margin: 8px;
+      flex: 1 1 0;
+    }
+    
 
-  main img {
-    width: 50%;
-  }
+  form input, form select {
+    margin-bottom: 0px;
+    width: 100%;
+    }
+  form div button {
+    margin: 0px;
+    width: 100%;
+     font-size: 15px;
+   } 
 
+  
+  
   section.alternate-background {
     display: flex;
   }
-  
-
-  section.alternate-background div {
+ 
+  section.alternate-background div  {
     display: flex;
-    justify-content: flex-start;
-    flex: 1;
-    margin: 0px 30px;
-    }
-  section.alternate-background div img {
-      margin: 10px;
-      }
+    flex: 1 1 0;
+    align-self: center;
+    margin: 10px;
+    } 
 
-    section.alternate-background div p {
-       align-self: center;
-     } 
+
+    section.alternate-background div:last-of-type{
+      flex: 2;
+    }
 
      #ideas div {
-      
        display: flex;
        flex-direction: row; 
        align-items: center;   
-       
      }
      #ideas div div {
        display: flex;
@@ -216,5 +250,7 @@ footer p {
       justify-content: center;
       flex: 1;
     }
+
+    
 
 }
